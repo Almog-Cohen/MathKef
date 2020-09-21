@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/black_dog00"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/black_dog01"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/black_dog02"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/black_dog03"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/brown_dog00"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/brown_dog01"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/brown_dog02"
+        android:duration="100"/>
+    <item
+        android:drawable="@drawable/brown_dog03"
+        android:duration="100"/>
+
+</animation-list>

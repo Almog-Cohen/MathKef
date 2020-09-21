@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:motionTarget="@+id/tvInfo"
+                motion:framePosition="25"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.277"
+                motion:percentY="-0.045" />
+            <KeyPosition
+                motion:motionTarget="@+id/tvInfo"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.475"
+                motion:percentY="0.033" />
+
+            <KeyAttribute
+                motion:motionTarget="@+id/tilPassword"
+                motion:framePosition="0"
+                android:alpha="0.5" />
+            <KeyPosition
+                motion:motionTarget="@+id/tvInfo"
+                motion:framePosition="75"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.744"
+                motion:percentY="-0.076" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/tvInfo"
+            android:layout_marginBottom="10dp" />
+        <Constraint
+            android:id="@+id/tilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tilPassword"
+            motion:layout_constraintTop_toBottomOf="@id/tilEmail"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp" />
+        <Constraint
+            android:id="@+id/ivLogos"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintBottom_toTopOf="@id/tvInfo"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/tvOr"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp" />
+        <Constraint
+            android:id="@+id/ivSMS"
+            android:layout_width="26.7dp"
+            android:layout_height="26.7dp"
+            motion:layout_constraintTop_toBottomOf="@id/tvOr"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/btnAction"
+            android:layout_marginTop="20dp" />
+    </ConstraintSet>
+
+
+
+    <ConstraintSet android:id="@+id/end" >
+        <Constraint
+            android:id="@+id/tvInfo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/ivLogos" />
+        <Constraint
+            android:id="@+id/tilEmail"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp" />
+        <Constraint
+            android:id="@+id/tilPassword"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toBottomOf="@+id/tilEmail"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/btnAction"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            android:layout_marginTop="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/tvOr" />
+
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:id="@+id/ivLogos" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toBottomOf="@id/tilPassword"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="0dp"
+            android:id="@+id/tilName" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ivSMS"
+            android:layout_marginBottom="10dp" />
+    </ConstraintSet>
+
+
+
+    <ConstraintSet android:id="@+id/sms" >
+        <Constraint
+            android:id="@+id/ivLogos"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tvInfo"
+            motion:layout_constraintTop_toBottomOf="@+id/ivLogos" />
+        <Constraint
+            android:id="@+id/tilEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_editor_absoluteX="20dp"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/tilPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tilEmail"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/btnAction"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="6dp"
+            motion:layout_constraintTop_toBottomOf="@+id/btnResendOTP" />
+        <Constraint
+            android:id="@+id/tvOr"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/ivSMS"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            motion:layout_constraintEnd_toStartOf="@id/etPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:id="@+id/ccp" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            android:layout_marginTop="30dp"
+            android:id="@+id/etPhone" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="@id/btnSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            motion:layout_constraintTop_toBottomOf="@id/btnSignIn"
+            motion:layout_constraintStart_toStartOf="@id/btnSignIn"
+            android:layout_marginTop="0dp"
+            android:id="@+id/btnResendOTP"
+            motion:layout_constraintBottom_toTopOf="@+id/btnAction" />
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetStart="@+id/end"
+        motion:constraintSetEnd="@+id/sms"
+        motion:duration="2000">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/ivSMS"
+                motion:framePosition="50"
+                android:scaleX="3"
+                android:scaleY="3" />
+            <KeyAttribute
+                motion:motionTarget="@+id/tvOr"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/tvOr"
+                motion:framePosition="100"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/tilName"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/btnAction"
+                motion:framePosition="5"
+                android:alpha="0.1" />
+        </KeyFrameSet>
+        <OnClick motion:targetId="@id/ivSMS" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/otp" >
+        <Constraint
+            android:id="@+id/ivLogos"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tvInfo"
+            motion:layout_constraintTop_toBottomOf="@+id/ivLogos" />
+        <Constraint
+            android:id="@+id/tilEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_editor_absoluteX="20dp"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/tilPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tilEmail"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/tilName"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toBottomOf="@id/tilPassword"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
+        <Constraint
+            android:id="@+id/btnAction"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="5dp" />
+        <Constraint
+            android:id="@+id/tvOr"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/ivSMS"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/etEnterOTP"
+            motion:layout_constraintEnd_toEndOf="@id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="@id/ccp"
+            android:layout_marginTop="10dp"
+            motion:layout_constraintTop_toBottomOf="@id/etPhone" />
+        <Constraint
+            android:id="@+id/tvResendOtp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintTop_toBottomOf="@id/btnResendOTP"
+            android:layout_marginStart="8dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+        <Constraint
+            android:id="@+id/ccp"
+            motion:layout_constraintEnd_toStartOf="@id/etPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            android:id="@+id/etPhone"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/tvTimeLeft" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/sms"
+        motion:constraintSetEnd="@+id/otp"
+        motion:duration="1000" />
+    <ConstraintSet android:id="@+id/newOtp" >
+        <Constraint
+            android:id="@+id/ivLogos"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tvInfo"
+            motion:layout_constraintTop_toBottomOf="@+id/ivLogos"
+            android:layout_marginTop="0dp" />
+        <Constraint
+            android:id="@+id/tilEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_editor_absoluteX="20dp"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/tilPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tilEmail"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/tilName"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toBottomOf="@id/tilPassword"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
+        <Constraint
+            android:id="@+id/btnAction"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/tvOr"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tilName"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/ivSMS"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            motion:layout_constraintTop_toBottomOf="@id/tvInfo"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/etEnterOTP"
+            motion:layout_constraintEnd_toEndOf="@id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="@id/ccp"
+            android:layout_marginTop="10dp"
+            motion:layout_constraintTop_toBottomOf="@id/etPhone" />
+        <Constraint
+            android:id="@+id/btnResendOTP"
+            motion:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintTop_toBottomOf="@id/btnSignIn"
+            motion:layout_constraintStart_toStartOf="@+id/btnSignIn"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            android:id="@+id/ccp"
+            motion:layout_constraintEnd_toStartOf="@id/etPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            android:id="@+id/etPhone"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/ivSMS"
+            android:layout_marginTop="30dp" />
+        <Constraint
+            android:id="@+id/tvTimeLeft"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tvResendOtp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible" />
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetStart="@+id/otp"
+        motion:constraintSetEnd="@+id/newOtp" />
+
+</MotionScene>

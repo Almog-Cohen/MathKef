@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/home_end"
+        motion:constraintSetStart="@id/home_start"
+        motion:duration="1500"
+        motion:autoTransition="animateToEnd">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+    <ConstraintSet android:id="@+id/home_start" >
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/btnJourney"
+            android:id="@+id/btnLastSurvivor"
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_width="0dp"
+            motion:layout_constraintTop_toBottomOf="@+id/tvIntro"
+            android:id="@+id/btnJourney"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp" />
+        <Constraint
+            android:id="@+id/tvAppName"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            motion:layout_constraintBottom_toTopOf="@id/tvUser" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/home_end" >
+
+        <Constraint
+            android:id="@+id/tvAppName"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            motion:layout_constraintBottom_toTopOf="@id/tvUser" />
+        <Constraint
+            android:id="@+id/btnJourney"
+            motion:layout_constraintEnd_toEndOf="@+id/btnLastSurvivor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="@id/btnLastSurvivor"
+            android:layout_marginTop="60dp"
+            motion:layout_constraintTop_toBottomOf="@+id/tvIntro" />
+        <Constraint
+            android:id="@+id/btnLastSurvivor"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            motion:layout_constraintTop_toBottomOf="@+id/btnJourney" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/bossLeft" >
+        <Constraint
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/ivHomeBoss"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/ivHomeDog"
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/knightRight" >
+        <Constraint
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/ivHomeKnight"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/ivHomeBoss"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/QuestionerLeft" >
+        <Constraint
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/ivHomeQuestioner"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/ivHomeKnight"
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/dogRight" >
+        <Constraint
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/ivHomeDog"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/ivHomeQuestioner"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible" />
+    </ConstraintSet>
+    <Transition
+        android:id="@+id/transitionHome1"
+        motion:constraintSetStart="@+id/home_end"
+        motion:constraintSetEnd="@+id/bossLeft"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500" />
+    <Transition
+        android:id="@+id/transitionHome2"
+        motion:constraintSetStart="@+id/bossLeft"
+        motion:constraintSetEnd="@+id/knightRight"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/ivHomeBoss"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/ivHomeBoss"
+                motion:framePosition="0"
+                android:alpha="0.5" />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        android:id="@+id/transitionHome3"
+        motion:constraintSetStart="@+id/knightRight"
+        motion:constraintSetEnd="@+id/QuestionerLeft"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/ivHomeKnight"
+                motion:framePosition="0"
+                android:alpha="0" />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        android:id="@+id/transitionHome4"
+        motion:constraintSetStart="@+id/QuestionerLeft"
+        motion:constraintSetEnd="@+id/dogRight"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/ivHomeQuestioner"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        android:id="@+id/transitionHome5"
+        motion:constraintSetStart="@+id/dogRight"
+        motion:constraintSetEnd="@+id/bossLeft"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/ivHomeDog"
+                motion:framePosition="0"
+                android:alpha="0" />
+        </KeyFrameSet>
+    </Transition>
+
+</MotionScene>

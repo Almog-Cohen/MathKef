@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/knight00"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight01"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight02"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight03"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight04"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight05"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight06"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight05"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight04"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight03"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight02"
+        android:duration="130"/>
+    <item
+        android:drawable="@drawable/knight01"
+        android:duration="130"/>
+
+</animation-list>

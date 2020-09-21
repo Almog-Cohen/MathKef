@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.GameRoom">
+
+    <ImageView
+        android:id="@+id/ivBackGameRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRoomName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvRoomName"
+        app:srcCompat="@drawable/vector_arrow"
+        android:contentDescription="@string/none" />
+
+    <TextView
+        android:id="@+id/tvRoomName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/merienda_one"
+        android:gravity="center"
+        android:text="@string/string"
+        android:textColor="@color/gool_orange"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSelectedOperators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="@string/string"
+        android:textColor="@color/gool_blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOperations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvOperations"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoomName" />
+
+    <TextView
+        android:id="@+id/tvOperations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/operators_selected"
+        android:textColor="@color/gool_blue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvSelectedOperators"
+        app:layout_constraintEnd_toStartOf="@id/tvSelectedOperators"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvSelectedOperators" />
+
+
+    <Button
+        android:id="@+id/btnStartGame"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_buttons"
+        android:fontFamily="@font/merienda_one"
+        android:text="@string/start"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_lock_room"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivRoomLock"
+        app:layout_constraintBottom_toTopOf="@+id/tvConnectedPlayers"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tvLockRoom"/>
+
+
+    <ImageView
+        android:id="@+id/ivRoomLock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/none"
+        app:layout_constraintBottom_toTopOf="@+id/tvConnectedPlayers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vector_lock_open" />
+
+    <TextView
+        android:id="@+id/tvConnectedPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/possible_players"
+        android:textColor="@color/gool_orange"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPlayers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvInstructionSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectedOperators"
+        tools:listitem="@layout/card_players" />
+
+    <TextView
+        android:id="@+id/tvInstructionSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/select_a_character"
+        android:textColor="@color/gool_blue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/ivFigureDragon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivFigureDragon"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/none"
+        android:padding="10dp"
+        android:src="@drawable/animation_dragon"
+        app:layout_constraintBottom_toTopOf="@+id/ivRoomLock"
+        app:layout_constraintEnd_toStartOf="@+id/ivFigureGiraffe"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFigureGiraffe"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@string/none"
+        android:padding="10dp"
+        android:src="@drawable/animation_giraffe"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFigureDragon"
+        app:layout_constraintEnd_toStartOf="@+id/ivFigureKnight"
+        app:layout_constraintStart_toEndOf="@+id/ivFigureDragon"
+        app:layout_constraintTop_toTopOf="@+id/ivFigureDragon" />
+
+    <ImageView
+        android:id="@+id/ivFigureKnight"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@string/none"
+        android:padding="10dp"
+        android:src="@drawable/animation_knight"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFigureGiraffe"
+        app:layout_constraintEnd_toStartOf="@+id/ivFigureDog"
+        app:layout_constraintStart_toEndOf="@+id/ivFigureGiraffe"
+        app:layout_constraintTop_toTopOf="@+id/ivFigureGiraffe" />
+
+    <ImageView
+        android:id="@+id/ivFigureDog"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@string/none"
+        android:padding="10dp"
+        android:src="@drawable/animation_dog"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFigureKnight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivFigureKnight"
+        app:layout_constraintTop_toTopOf="@+id/ivFigureKnight" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/gool_grey"
+    ads:layoutDescription="@xml/fragment_home_scene">
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/merienda_one"
+        android:gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:textColor="@color/gool_orange"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        ads:layout_constraintBottom_toTopOf="@id/tvUser"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:gravity="center"
+        android:text="@string/challenge_your_math_skills"
+        android:textColor="@color/gool_blue"
+        android:textSize="26sp"
+        ads:layout_constraintBottom_toTopOf="@id/tvIntro"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/tvAppName" />
+
+    <TextView
+        android:id="@+id/tvIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:gravity="center"
+        android:text="@string/choose_game"
+        android:textColor="@color/gool_blue"
+        android:textSize="26sp"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/tvUser" />
+
+    <ImageView
+        android:id="@+id/ivHomeBoss"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/none"
+        android:src="@drawable/animation_boss"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintStart_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivHomeKnight"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/none"
+        android:src="@drawable/animation_knight"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivHomeQuestioner"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/none"
+        android:src="@drawable/animation_questioner"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintStart_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivHomeDog"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/none"
+        android:src="@drawable/animation_dog"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnJourney"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/shape_buttons"
+        android:fontFamily="@font/merienda_one"
+        android:text="@string/journey"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        ads:layout_constraintEnd_toEndOf="@+id/btnLastSurvivor"
+        ads:layout_constraintStart_toStartOf="@id/btnLastSurvivor"
+        ads:layout_constraintTop_toBottomOf="@+id/tvIntro" />
+
+    <Button
+        android:id="@+id/btnLastSurvivor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_buttons"
+        android:fontFamily="@font/merienda_one"
+        android:text="@string/last_survivor"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/btnJourney" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

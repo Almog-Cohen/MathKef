@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#0b0b0b</color>
+    <color name="gool_orange">#fb8833</color>
+    <color name="gool_blue">#319eaf</color>
+    <color name="gool_light_blue">#66c8d7</color>
+    <color name="gool_grey">#B3F1F1F1</color>
+
+    //  Pastel Rainbow
+    <color name="pastel_green">#a8e6cf</color>
+    <color name="pastel_light_green">#dcedc1</color>
+    <color name="pastel_plum">#ffd3b6</color>
+    <color name="pastel_light_pink">#ffaaa5</color>
+    <color name="pastel_pink">#ff8b94</color>
+    <color name="pastel_purple">#aa96da</color>
+    <color name="pastel_sand">#ffffd2</color>
+    <color name="pastel_purple1">#f0defd</color>
+<!--    <color name="pastel_purple">#aa96da</color>-->
+<!--    <color name="pastel_purple">#aa96da</color>-->
+
+</resources>

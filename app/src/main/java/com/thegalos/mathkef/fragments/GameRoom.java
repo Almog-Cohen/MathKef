@@ -75,7 +75,6 @@ public class GameRoom extends Fragment {
     TextView tvInstructionSelect;
     TextView tvRoomName;
     TextView tvSelectedOperators;
-    TextView tvLockRoom;
 
     SharedPreferences sp;
     FirebaseUser user;
@@ -243,12 +242,10 @@ public class GameRoom extends Fragment {
 
                         case "Open":
                             ivRoomLock.setImageResource(R.drawable.vector_lock_open);
-                            tvLockRoom.setVisibility(View.VISIBLE);
 
                             break;
                         case "Close":
                             ivRoomLock.setImageResource(R.drawable.vector_lock);
-                            tvLockRoom.setVisibility(View.INVISIBLE);
                             break;
                         case "Exit":
                             closeListeners();
@@ -431,7 +428,6 @@ public class GameRoom extends Fragment {
         ivBackGameRoom = view.findViewById(R.id.ivBackGameRoom);
         tvConnectedPlayers = view.findViewById(R.id.tvConnectedPlayers);
         ivRoomLock = view.findViewById(R.id.ivRoomLock);
-        tvLockRoom = view.findViewById(R.id.tvLockRoom);
 
         adDragon = (AnimationDrawable) ivFigureDragon.getDrawable();
         adGiraffe = (AnimationDrawable) ivFigureGiraffe.getDrawable();
@@ -442,7 +438,6 @@ public class GameRoom extends Fragment {
         adKnight.start();
         adDog.start();
 
-        //TODO set R.string.room_name_before hebrew!!!!!
         String str = getString(R.string.room_name_before) + roomPath + getString(R.string.room_name_after);
         tvRoomName.setText(str);
 

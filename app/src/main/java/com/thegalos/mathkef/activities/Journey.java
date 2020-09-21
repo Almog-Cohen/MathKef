@@ -250,7 +250,6 @@ public class Journey extends AppCompatActivity {
                                         break;
                                 }
                             }
-//                            playersNumTurnQueue.remove();
                         } else {
 
                             Player firstPlayer = playersTurnQueue.peek();
@@ -308,7 +307,6 @@ public class Journey extends AppCompatActivity {
         });
 
         if (!playersTurnQueue.peek().getPlayerUID().equals(playerId)) {
-            //string
             Player firstPlayer = playersTurnQueue.peek();
             playersTurnQueue.remove();
             playersTurnQueue.add(firstPlayer);
@@ -321,7 +319,6 @@ public class Journey extends AppCompatActivity {
                 if (playersTurnQueue.peek().getPlayerUID().equals(playerId)) {
                     Player lastPlayer = playersTurnQueue.peek();
                     playersTurnQueue.remove();
-//
                     playersTurnQueue.add(lastPlayer);
                     isPlayer = false;
                 } else {
@@ -343,15 +340,12 @@ public class Journey extends AppCompatActivity {
                         if (isClicked.equals("Yes")) {
                             isCorrect = randomFalseOrTrueList.get(0) == 0;
                             btnYes.setVisibility(View.VISIBLE);
-//                        btnYes.setAnimation(shakeAnim);
 
                             btnYes.startAnimation(shakeAnim);
 
                         } else if (isClicked.equals("No")) {
-//                        btnNo.setVisibility(View.VISIBLE);
                             isCorrect = randomFalseOrTrueList.get(0) == 1;
                             btnNo.setVisibility(View.VISIBLE);
-//                        answeredTvJourney.setText("No");
                             btnNo.startAnimation(shakeAnim);
                         }
                 }
@@ -379,19 +373,9 @@ public class Journey extends AppCompatActivity {
                     adLightning.start();
                     ivLightning.setVisibility(View.VISIBLE);
                 }
-//                    if (regularQuestions)
-//                        ivLightning.setX(questionerX);
-//                    else
-//                        ivLightning.setX(bossX);
-//                } else {
-//                    ivLightning.setX(ivPlayer.getX());
-//                }
+
                 checkAnswer(isCorrect);
 
-                //check if boss or not
-
-//                adLightning.start();
-//                ivLightning.setVisibility(View.VISIBLE);
                 FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("Empty");
             }
 
@@ -424,9 +408,6 @@ public class Journey extends AppCompatActivity {
         if (playersTurnQueue.size() > 0)
             FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players").child(playersTurnQueue.peek().getPlayerUID()).child("Host").setValue(true);
 
-//        for (int i = 0; i < playersTurnQueue.size(); i++)
-//            playersNumTurnQueue.add(i);
-
         FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Game_Status").setValue("Close");
 
         randomRead();
@@ -451,11 +432,6 @@ public class Journey extends AppCompatActivity {
             }
         });
 
-
-
-        //--------------------------  start Game start object movement  ----------------------------
-
-
         new CountDownTimer(loadingScreenTime, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -475,11 +451,6 @@ public class Journey extends AppCompatActivity {
 
                 switchingQuestion();
                 timer(time);
-
-
-
-
-//                ivPlayer0.animate().translationX(50).setDuration(1000);
 
                 for (Figure figure : figureList) {
 
@@ -670,7 +641,6 @@ public class Journey extends AppCompatActivity {
             if (isBossNow) {
                 counterRightBossQuestion++;
                 if (counterRightBossQuestion == 4) {
-                    //Need to return the boss to his normal size
                     if (lifeLeft == 4) {
                         score += 200;
                         tvScore.setText(String.valueOf(score));
@@ -691,11 +661,9 @@ public class Journey extends AppCompatActivity {
 
                 score += 200;
             } else {
-                //regular score
                 score += 100;
             }
             tvScore.setText(String.valueOf(score));
-            //Need change modulo to 2000
             if (score % modulo == 0 ) {
                 regularQuestions = false;
                 bossSetup = true;
@@ -774,7 +742,6 @@ public class Journey extends AppCompatActivity {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-//
                             moveObjects("Boss");
                         }
                     });
@@ -1225,7 +1192,6 @@ public class Journey extends AppCompatActivity {
         display.getSize(size);
         screenWidth = size.x;
 
-        //ALMOG CHANGE
         screenRatioX = 1920f/screenWidth;
         screenWidth = (int) (screenWidth*screenRatioX);
 

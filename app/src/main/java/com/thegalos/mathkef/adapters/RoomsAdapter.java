@@ -77,14 +77,11 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyRoomsViewH
         String str = context.getResources().getString(R.string.players_count) + room.getNumOfPlayers();
         holder.tvNumOfPlayers.setText(str);
         holder.tvRoomName.setText(room.getRoomName());
-//        holder.tvNumOfPlayers.setText(room.getNumOfPlayers());
         str = room.getStatus();
         if (str != null) {
             if (str.equals("Close"))
                 Glide.with(context).load(R.drawable.vector_lock).into(holder.ivLocked);
-//            holder.ivLocked.setImageResource(R.drawable.vector_lock);
             else if (str.equals("Open"))
-//            holder.ivLocked.setImageResource(R.drawable.vector_lock_open);
                 Glide.with(context).load(R.drawable.vector_lock_open).into(holder.ivLocked);
         }
 

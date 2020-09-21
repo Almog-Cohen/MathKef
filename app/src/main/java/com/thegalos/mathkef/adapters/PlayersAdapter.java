@@ -55,7 +55,6 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.MyPlayer
         Player PlayerObject = playerList.get(position);
 
         holder.getPlayerName.setText(PlayerObject.getPlayerName());
-//        holder.getPlayerName.setGravity(Gravity.CENTER);
         holder.getPlayerName.setTextSize(26);
         if (PlayerObject.getPlayerFigure() != null) {
             switch (PlayerObject.getPlayerFigure()) {

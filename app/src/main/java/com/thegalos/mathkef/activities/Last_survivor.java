@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
@@ -114,7 +115,6 @@ public class Last_survivor extends AppCompatActivity {
     private List<MultiChoiceQuestion> tempQList;
     private List<MultiChoiceQuestion> MultiChoiceQuestionList;
 
-    //USAGE???
 
 
     private List<Integer> randomQuestionList;
@@ -136,39 +136,6 @@ public class Last_survivor extends AppCompatActivity {
         setContentView(R.layout.activity_last_survivor);
 
         init();
-
-
-
-//        questionListener = questionRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                if (snapshot.exists()) {
-//
-//                    tvAnswered.setText();
-//                    AlphaAnimation alphaAnim = new AlphaAnimation(1.0f,0.0f);
-//                    alphaAnim.setStartOffset(0);
-//                    alphaAnim.setDuration(4000);
-//                    alphaAnim.setAnimationListener(new Animation.AnimationListener()
-//                    {
-//                        @Override
-//                        public void onAnimationStart(Animation animation) { }
-//
-//                        public void onAnimationEnd(Animation animation) {
-//                            tvAnswered.setVisibility(View.INVISIBLE);
-//                        }
-//
-//                        @Override
-//                        public void onAnimationRepeat(Animation animation) { }
-//
-//                    });
-//                    tvAnswered.setAnimation(alphaAnim);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) { }
-//        });
 
         clickedListener =  isClickedRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -289,7 +256,6 @@ public class Last_survivor extends AppCompatActivity {
                                 break;
                         }
 
-                        //ALMOG NEW
                         if (playerLeftId.equals(playerId)) {
 
                             if (playersTurnQueue.size() == 0)
@@ -319,24 +285,6 @@ public class Last_survivor extends AppCompatActivity {
                     tvAnswered.setText(str);
                     tvAnswered.setVisibility(View.VISIBLE);
                     tvAnswered.startAnimation(shakeAnim);
-
-//                    if (str.equals("One")) {
-//                        btnOne.setVisibility(View.VISIBLE);
-//                        btnOne.startAnimation(shakeAnim);
-//                    }
-//                    if (str.equals("Two")) {
-//                        btnTwo.setVisibility(View.VISIBLE);
-//                        btnTwo.startAnimation(shakeAnim);
-//                    }
-//                    if (str.equals("Three")) {
-//                        btnThree.setVisibility(View.VISIBLE);
-//                        btnThree.startAnimation(shakeAnim);
-//                    }
-//                    if (str.equals("Four")) {
-//                        btnFour.setVisibility(View.VISIBLE);
-//                        btnFour.startAnimation(shakeAnim);
-//                    }
-
                 }
             }
             @Override
@@ -399,15 +347,6 @@ public class Last_survivor extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-//                        if (isPlayerTurn) {
-//                            if (questionAnswered != null && correctQuestion != null) {
-//                                if (questionAnswered.equals(correctQuestion)) {
-//                                    FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("Yes");
-//                                } else {
-//                                    FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("No");
-//                                }
-//                            }
-//                        }
                     }
                 }.start();
 
@@ -419,11 +358,8 @@ public class Last_survivor extends AppCompatActivity {
 
         //Getting players names
         playersNamesList = new ArrayList<>(getIntent().getStringArrayListExtra("Players_Names_List"));
+
         //Getting our players turn queue , and setting the host to the first turn
-//        playersTurnQueue = new LinkedList<>(getIntent().getStringArrayListExtra("Players_List"));
-
-
-
         playersTurnQueue = new LinkedList<>((Collection<? extends Player>) getIntent().getSerializableExtra("Players_List"));
         playersList = new ArrayList<>((Collection<? extends Player>) getIntent().getSerializableExtra("Players_List"));
 
@@ -951,7 +887,7 @@ public class Last_survivor extends AppCompatActivity {
             afkTimer.cancel();
 
         if (countDownTimer != null)
-        countDownTimer.cancel();
+            countDownTimer.cancel();
         closeListeners();
         finish();
     }
@@ -1155,67 +1091,46 @@ public class Last_survivor extends AppCompatActivity {
             case 0:
 
                 if (player0Live == 0)
-                checkIsGameOver(player0Score,player0Counter);
+                    checkIsGameOver(player0Score,player0Counter);
 
                 if (player0Live == 1) {
                     ivHeart00.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player0Live == 2) {
 
+                } else if (player0Live == 2) {
                     ivHeart01.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player0Live == 3) {
-
                     ivHeart02.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-////////////////////////////////////////////////////////////////////////////////////////////////////// 1111111111
+
                 if (player1Live == 1) {
                     ivHeart10.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player1Live == 2) {
 
+                } else if (player1Live == 2) {
                     ivHeart11.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player1Live == 3) {
-
                     ivHeart12.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 22222222
-
 
                 if (player2Live == 1) {
                     ivHeart20.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player2Live == 2) {
 
+                } else if (player2Live == 2) {
                     ivHeart21.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player2Live == 3) {
-
                     ivHeart22.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 3333333
 
                 if (player3Live == 1) {
                     ivHeart30.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player3Live == 2) {
 
+                } else if (player3Live == 2) {
                     ivHeart31.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player3Live == 3) {
-
                     ivHeart32.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
                 break;
 
@@ -1226,63 +1141,42 @@ public class Last_survivor extends AppCompatActivity {
 
                 if (player1Live == 1) {
                     ivHeart00.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player1Live == 2) {
 
+                } else if (player1Live == 2) {
                     ivHeart01.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player1Live == 3) {
-
                     ivHeart02.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-////////////////////////////////////////////////////////////////////////////////////////////////////// 1111111111
+
                 if (player0Live == 1) {
                     ivHeart10.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
                 } else if (player0Live == 2) {
-
                     ivHeart11.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player0Live == 3) {
-
                     ivHeart12.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 22222222
-
 
                 if (player2Live == 1) {
                     ivHeart20.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player2Live == 2) {
 
+                } else if (player2Live == 2) {
                     ivHeart21.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player2Live == 3) {
-
                     ivHeart22.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 3333333
 
                 if (player3Live == 1) {
                     ivHeart30.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
+
                 } else if (player3Live == 2) {
 
                     ivHeart31.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player3Live == 3) {
-
                     ivHeart32.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
                 break;
 
@@ -1293,63 +1187,44 @@ public class Last_survivor extends AppCompatActivity {
 
                 if (player2Live == 1) {
                     ivHeart00.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player2Live == 2) {
 
+                } else if (player2Live == 2) {
                     ivHeart01.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player2Live == 3) {
-
                     ivHeart02.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-////////////////////////////////////////////////////////////////////////////////////////////////////// 1111111111
+
                 if (player0Live == 1) {
                     ivHeart10.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player0Live == 2) {
 
+                } else if (player0Live == 2) {
                     ivHeart11.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player0Live == 3) {
-
                     ivHeart12.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
 
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 22222222
 
 
                 if (player1Live == 1) {
                     ivHeart20.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player1Live == 2) {
 
+                } else if (player1Live == 2) {
                     ivHeart21.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player1Live == 3) {
-
                     ivHeart22.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 3333333
 
                 if (player3Live == 1) {
                     ivHeart30.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player3Live == 2) {
 
+                } else if (player3Live == 2) {
                     ivHeart31.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player3Live == 3) {
-
                     ivHeart32.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
                 break;
 
@@ -1360,69 +1235,50 @@ public class Last_survivor extends AppCompatActivity {
 
                 if (player3Live == 1) {
                     ivHeart00.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player3Live == 2) {
 
+                } else if (player3Live == 2) {
                     ivHeart01.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player3Live == 3) {
-
                     ivHeart02.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
-////////////////////////////////////////////////////////////////////////////////////////////////////// 1111111111
+
                 if (player0Live == 1) {
                     ivHeart10.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player0Live == 2) {
 
+                } else if (player0Live == 2) {
                     ivHeart11.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player0Live == 3) {
-
                     ivHeart12.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
 
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 22222222
 
 
                 if (player1Live == 1) {
                     ivHeart20.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player1Live == 2) {
 
+                } else if (player1Live == 2) {
                     ivHeart21.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player1Live == 3) {
-
                     ivHeart22.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
 
-                ////////////////////////////////////////////////////////////////////////////////////////////////////// 3333333
 
                 if (player2Live == 1) {
                     ivHeart30.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 0;
-                } else if (player2Live == 2) {
 
+                } else if (player2Live == 2) {
                     ivHeart31.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 1;
 
                 } else if (player2Live == 3) {
-
                     ivHeart32.setImageResource(R.drawable.grayheart); // if the first heart appears
-//            lifeLeft = 2;
                 }
                 break;
         }
     }
 
-    //TODO ALMOG FILL
     /**
      *  Removing the last question from the list
      *  Cancel the timer and calling a new timer
@@ -1503,84 +1359,87 @@ public class Last_survivor extends AppCompatActivity {
     private void checkIsGameOver(final int score, final int questionsAnswered) {
         //Finish the game with player id
 
-            playerLost = true ;
-            countDownTimer.cancel();
-            btnOne.setVisibility(View.GONE);
-            btnTwo.setVisibility(View.GONE);
-            btnThree.setVisibility(View.GONE);
-            btnFour.setVisibility(View.GONE);
+        playerLost = true ;
+        countDownTimer.cancel();
+        btnOne.setVisibility(View.GONE);
+        btnTwo.setVisibility(View.GONE);
+        btnThree.setVisibility(View.GONE);
+        btnFour.setVisibility(View.GONE);
 
-            //Getting best score of the player
-            int userScore = sp.getInt("Last_SurvivorScore", 0);
-            String str;
+        MediaPlayer mediaPlayer = MediaPlayer.create(Last_survivor.this, R.raw.evil_laugh);
+        mediaPlayer.start();
 
-            if (randomMultiList.size() == 0) {
-                str = getString(R.string.game_over_score_is) + score;
+        //Getting best score of the player
+        int userScore = sp.getInt("Last_SurvivorScore", 0);
+        String str;
 
-            } else {
-                str = getString(R.string.no_more_life_score_is) + score;
-            }
-            if (userScore < score) {
-                str = getString(R.string.congrats_new_high_score) + score;
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("HighScores").child("Last_Survivor").setValue(score);
-                sp.edit().putInt("Last_SurvivorScore", score).apply();
-                lastSurvivorKonfetti.build()
-                        .addColors(getResources().getColor(R.color.gool_light_blue), getResources().getColor(R.color.gool_blue), getResources().getColor(R.color.gool_orange))
-                        .setDirection(0.0, 359.0)
-                        .setSpeed(1f, 10f)
-                        .setFadeOutEnabled(true)
-                        .setTimeToLive(2000L)
-                        .addShapes(nl.dionsegijn.konfetti.models.Shape.Square.INSTANCE,nl.dionsegijn.konfetti.models.Shape.Circle.INSTANCE)
-                        .addSizes(new Size(12, 5f))
-                        .setPosition(lastSurvivorKonfetti.getWidth()/2f , lastSurvivorKonfetti.getHeight()/2f)
-                        .streamFor(300, 10000L);
-            }
+        if (randomMultiList.size() == 0) {
+            str = getString(R.string.game_over_score_is) + score;
 
-            //Score to Firebase
-            DatabaseReference scoreRef = FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players");
-            scoreRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists())
-                        for (DataSnapshot nameSnapShot : dataSnapshot.getChildren()) {
-                            if (nameSnapShot.getKey().equals(playerId)) {
-                                String playerName = nameSnapShot.child("Name").getValue(String.class);
-                                DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference().child("HighScores").child("Last_Survivor").push();
-                                dbReference.child("Name").setValue(playerName);
-                                dbReference.child("Score").setValue(score);
-                                dbReference.child("QuestionAnswered").setValue(questionsAnswered);
-                            }
+        } else {
+            str = getString(R.string.no_more_life_score_is) + score;
+        }
+        if (userScore < score) {
+            str = getString(R.string.congrats_new_high_score) + score;
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("HighScores").child("Last_Survivor").setValue(score);
+            sp.edit().putInt("Last_SurvivorScore", score).apply();
+            lastSurvivorKonfetti.build()
+                    .addColors(getResources().getColor(R.color.gool_light_blue), getResources().getColor(R.color.gool_blue), getResources().getColor(R.color.gool_orange))
+                    .setDirection(0.0, 359.0)
+                    .setSpeed(1f, 10f)
+                    .setFadeOutEnabled(true)
+                    .setTimeToLive(2000L)
+                    .addShapes(nl.dionsegijn.konfetti.models.Shape.Square.INSTANCE,nl.dionsegijn.konfetti.models.Shape.Circle.INSTANCE)
+                    .addSizes(new Size(12, 5f))
+                    .setPosition(lastSurvivorKonfetti.getWidth()/2f , lastSurvivorKonfetti.getHeight()/2f)
+                    .streamFor(300, 10000L);
+        }
+
+        //Score to Firebase
+        DatabaseReference scoreRef = FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players");
+        scoreRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists())
+                    for (DataSnapshot nameSnapShot : dataSnapshot.getChildren()) {
+                        if (nameSnapShot.getKey().equals(playerId)) {
+                            String playerName = nameSnapShot.child("Name").getValue(String.class);
+                            DatabaseReference dbReference = FirebaseDatabase.getInstance().getReference().child("HighScores").child("Last_Survivor").push();
+                            dbReference.child("Name").setValue(playerName);
+                            dbReference.child("Score").setValue(score);
+                            dbReference.child("QuestionAnswered").setValue(questionsAnswered);
                         }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
+            }
+        });
 
-            FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players_Count").setValue(playerId);
-            FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players").child(playerId).setValue(null);
+        FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players_Count").setValue(playerId);
+        FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Players").child(playerId).setValue(null);
 
-            final Dialog dialog = new Dialog(this, R.style.Theme_Dialog);
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setContentView(R.layout.dialog_end_game);
-            dialog.setCancelable(false);
-            TextView tvGameOverText = dialog.findViewById(R.id.tvGameOverText);
-            TextView tvGameOverOK = dialog.findViewById(R.id.tvGameOverOK);
-            String setText = str + getString(R.string.you_have_answered) + questionsAnswered + getString(R.string.questions_correct);
-            tvGameOverText.setText(setText);
+        final Dialog dialog = new Dialog(this, R.style.Theme_Dialog);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_end_game);
+        dialog.setCancelable(false);
+        TextView tvGameOverText = dialog.findViewById(R.id.tvGameOverText);
+        TextView tvGameOverOK = dialog.findViewById(R.id.tvGameOverOK);
+        String setText = str + getString(R.string.you_have_answered) + questionsAnswered + getString(R.string.questions_correct);
+        tvGameOverText.setText(setText);
 
-            tvGameOverOK.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(Last_survivor.this, MainActivity.class));
-                    finish();
-                    dialog.dismiss();
-                }
-            });
+        tvGameOverOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Last_survivor.this, MainActivity.class));
+                finish();
+                dialog.dismiss();
+            }
+        });
 
-            dialog.show();
+        dialog.show();
 
     }
 
@@ -1625,8 +1484,6 @@ public class Last_survivor extends AppCompatActivity {
             turnRef.removeEventListener(turnRefListener);
         if (clickedListener != null && isClickedRef != null)
             isClickedRef.removeEventListener(clickedListener);
-//        if (questionListener != null && questionRef != null)
-//            questionRef.removeEventListener(questionListener);
         if (selectedAnswerListener != null && selectedAnswerRef != null)
             selectedAnswerRef.removeEventListener(selectedAnswerListener);
     }

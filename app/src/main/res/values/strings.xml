@@ -89,6 +89,5 @@
     <string name="forced_firebase_update">Forced Firebase update</string>
     <string name="email_not_valid">Email not valid</string>
     <string name="min_pass_length">Password must contain min 6 characters</string>
-    <string name="tv_lock_room">Please lock the room for start the game</string>
 
 </resources>

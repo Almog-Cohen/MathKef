@@ -81,18 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_lock_room"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/ivRoomLock"
-        app:layout_constraintBottom_toTopOf="@+id/tvConnectedPlayers"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/tvLockRoom"/>
-
 
     <ImageView
         android:id="@+id/ivRoomLock"

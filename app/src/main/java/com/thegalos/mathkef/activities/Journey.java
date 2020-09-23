@@ -921,7 +921,6 @@ public class Journey extends AppCompatActivity {
 
     }
 
-    //TODO ALMOG FILL
     /**
      * Cancel the away from keyboard timer if the player is back to the application
      */
@@ -933,7 +932,6 @@ public class Journey extends AppCompatActivity {
 
     }
 
-    //TODO ALMOG FILL
     /**
      * Start away from keyboard timer if the player is not in the application
      * When the time is over the player is removed from the room firebase and switching to home fragment
@@ -961,7 +959,6 @@ public class Journey extends AppCompatActivity {
         }
     }
 
-    //TODO ALMOG FILL
     /**
      * When player status is leave/lost/Away from keyboard all the timers and listeners are closed
      */
@@ -1121,8 +1118,6 @@ public class Journey extends AppCompatActivity {
             }
         }
     }
-
-    //TODO ALMOG FILL
 
     /**
      * @param timeCounter int that holds the time for setting the timer

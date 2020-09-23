@@ -876,7 +876,6 @@ public class Last_survivor extends AppCompatActivity {
     }
 
 
-    //TODO ALMOG FILL
     /**
      * When player status is leave/lost/Away from keyboard all the timers and listeners are closed
      */
@@ -892,7 +891,6 @@ public class Last_survivor extends AppCompatActivity {
         finish();
     }
 
-    //TODO ALMOG FILL
     /**
      * Setting the new question on the screen
      * Starting new timer
@@ -956,7 +954,6 @@ public class Last_survivor extends AppCompatActivity {
         }.start();
     }
 
-    //TODO ALMOG FILL
     /**
      * Setting questions by host chosen operators
      */
@@ -995,7 +992,6 @@ public class Last_survivor extends AppCompatActivity {
 
     }
 
-    //TODO ALMOG FILL
     /**
      *@param isCorrect Boolean holds whether the answer is correct or not
      *  Add score to player who has answer correct or calling the function checkHearts to decrease life if the answer is incorrect
@@ -1063,7 +1059,6 @@ public class Last_survivor extends AppCompatActivity {
         } else checkHearts();
     }
 
-    //TODO ALMOG FILL
     /**
      *  Decrease player life and checks if player has lost
      */

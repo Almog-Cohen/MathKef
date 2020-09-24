@@ -60,21 +60,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
- <!--   <Button
-        android:id="@+id/btnBack"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/blue_fill__rounded_color"
-        android:fontFamily="@font/quicksand_regular"
-        android:padding="15dp"
-        android:text="@string/back"
-        android:textColor="#000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

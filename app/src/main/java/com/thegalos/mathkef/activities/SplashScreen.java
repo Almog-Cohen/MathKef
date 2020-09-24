@@ -65,7 +65,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_splash_login);
 
         motionLayout = findViewById(R.id.motionLayout);
         btnAction = findViewById(R.id.btnAction);
@@ -380,8 +380,8 @@ public class SplashScreen extends AppCompatActivity {
         tvTimeLeft.setVisibility(VISIBLE);
         new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
-                tvResendOtp.setText(R.string.request_new_otp);
-                String str = getString(R.string.in_space) + (millisUntilFinished / 1000) + getString(R.string.seconds);
+//                tvResendOtp.setText();
+                String str = getString(R.string.request_new_otp) + "\n" + getString(R.string.in) + " " + (millisUntilFinished / 1000) + " " + getString(R.string.seconds);
                 tvTimeLeft.setText(str);
             }
 

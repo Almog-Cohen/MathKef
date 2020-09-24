@@ -438,7 +438,7 @@ public class GameRoom extends Fragment {
         adKnight.start();
         adDog.start();
 
-        String str = getString(R.string.room_name_before) + roomPath + getString(R.string.room_name_after);
+        String str = getString(R.string.room_name_before) + " " + roomPath + " " + getString(R.string.room_name_after);
         tvRoomName.setText(str);
 
         rvPlayers.setHasFixedSize(true);

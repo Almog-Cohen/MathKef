@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/merienda_one"
-        android:text="@string/string"
+        android:text="@string/none"
         android:textColor="@color/gool_blue"
         android:textSize="30sp"
         android:textStyle="bold"

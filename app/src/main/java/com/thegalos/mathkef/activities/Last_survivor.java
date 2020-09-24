@@ -281,7 +281,7 @@ public class Last_survivor extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String str = playersNamesList.get(playersNumTurnQueue.peek()) + "\n" + getString(R.string.has_answered) + dataSnapshot.getValue(String.class);
+                    String str = playersNamesList.get(playersNumTurnQueue.peek()) + "\n" + getString(R.string.has_answered) + " " + dataSnapshot.getValue(String.class);
                     tvAnswered.setText(str);
                     tvAnswered.setVisibility(View.VISIBLE);
                     tvAnswered.startAnimation(shakeAnim);
@@ -936,9 +936,9 @@ public class Last_survivor extends AppCompatActivity {
         countDownTimer = new CountDownTimer(12000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                String str = playersTurnQueue.peek().getPlayerName() + getString(R.string.space_turn);
+                String str = getString(R.string.player_turn_before) + " " + playersTurnQueue.peek().getPlayerName() + " " + getString(R.string.player_turn_after);
                 tvPlayerTurn.setText(str);
-                str = getString(R.string.time_left_milli) + (millisUntilFinished / 1000);
+                str = getString(R.string.time_left_milli) + " " + (millisUntilFinished / 1000);
                 tvTimer.setText(str);
             }
 
@@ -1369,13 +1369,13 @@ public class Last_survivor extends AppCompatActivity {
         String str;
 
         if (randomMultiList.size() == 0) {
-            str = getString(R.string.game_over_score_is) + score;
+            str = getString(R.string.game_over_score_is) + " " + score;
 
         } else {
-            str = getString(R.string.no_more_life_score_is) + score;
+            str = getString(R.string.no_more_life_score_is) + " " + score;
         }
         if (userScore < score) {
-            str = getString(R.string.congrats_new_high_score) + score;
+            str = getString(R.string.congrats_new_high_score) + " " + score;
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("HighScores").child("Last_Survivor").setValue(score);
             sp.edit().putInt("Last_SurvivorScore", score).apply();
@@ -1422,7 +1422,7 @@ public class Last_survivor extends AppCompatActivity {
         dialog.setCancelable(false);
         TextView tvGameOverText = dialog.findViewById(R.id.tvGameOverText);
         TextView tvGameOverOK = dialog.findViewById(R.id.tvGameOverOK);
-        String setText = str + getString(R.string.you_have_answered) + questionsAnswered + getString(R.string.questions_correct);
+        String setText = str + "\n" +getString(R.string.you_have_answered) + " " + questionsAnswered + " " + getString(R.string.questions_correct);
         tvGameOverText.setText(setText);
 
         tvGameOverOK.setOnClickListener(new View.OnClickListener() {
@@ -1517,7 +1517,7 @@ public class Last_survivor extends AppCompatActivity {
 
         linearLayout = findViewById(R.id.linearLayoutHold);
         lastSurvivorKonfetti = findViewById(R.id.lastSurvivorKonfetti);
-        tvTimeTOStartSurvivor = findViewById(R.id.tvTimeTOStartSurvivor);
+        tvTimeTOStartSurvivor = findViewById(R.id.tvTimeToStartSurvivor);
         tvName0 = findViewById(R.id.tvName0);
         tvScore0 = findViewById(R.id.tvScore0);
         ivHeart00 = findViewById(R.id.ivHeart00);

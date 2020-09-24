@@ -10,6 +10,7 @@
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
+    android:layoutDirection="ltr"
     app:contentPadding="5dp">
 
     <LinearLayout

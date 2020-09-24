@@ -74,7 +74,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyRoomsViewH
     @Override
     public void onBindViewHolder(@NonNull final MyRoomsViewHolder holder, int position) {
         Room room = roomsList.get(position);
-        String str = context.getResources().getString(R.string.players_count) + room.getNumOfPlayers();
+        String str = context.getResources().getString(R.string.players_count)+ " " + room.getNumOfPlayers();
         holder.tvNumOfPlayers.setText(str);
         holder.tvRoomName.setText(room.getRoomName());
         str = room.getStatus();

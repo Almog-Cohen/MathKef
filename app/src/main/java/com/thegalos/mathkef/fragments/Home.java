@@ -60,7 +60,7 @@ public class Home extends Fragment {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            String str = "Welcome " + user.getDisplayName();
+            String str = getString(R.string.welcome)+ " " + user.getDisplayName();
             tvSlogan.setText(str);
         }
 

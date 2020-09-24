@@ -7,19 +7,6 @@
 
     </style>
 
-
-
-   <!-- <style name="Theme_Login" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:background">@drawable/background_gradient</item>
-    </style>-->
-
-<!--    <style name="ScorePopUpAnimation">
-        <item name="android:windowEnterAnimation">@anim/popup</item>
-    </style>-->
-
     <style name="Theme_Dialog" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>

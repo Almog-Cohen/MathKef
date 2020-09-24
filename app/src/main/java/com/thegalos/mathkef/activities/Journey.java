@@ -818,9 +818,9 @@ public class Journey extends AppCompatActivity {
         ivBoss.setVisibility(View.INVISIBLE);
 
         int userScore = sp.getInt("JourneyScore", 0);
-        String str = getString(R.string.no_more_life_score_is) + score;
+        String str = getString(R.string.no_more_life_score_is) + " " + score;
         if (userScore < score) {
-            str = getString(R.string.congrats_new_high_score) + score;
+            str = getString(R.string.congrats_new_high_score) + " " + score;
             journeyKonfetti.build()
                     .addColors(getResources().getColor(R.color.gool_light_blue), getResources().getColor(R.color.gool_blue), getResources().getColor(R.color.gool_orange))
                     .setDirection(0.0, 359.0)
@@ -1129,7 +1129,7 @@ public class Journey extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 tvTimerJourney.setVisibility(View.VISIBLE);
-                String str = getString(R.string.time_left_milli) + (millisUntilFinished / 1000);
+                String str = getString(R.string.time_left_milli) + " " + (millisUntilFinished / 1000);
                 tvTimerJourney.setText(str);
             }
 

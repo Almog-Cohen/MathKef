@@ -2,7 +2,7 @@
     <string name="app_name">MathKef</string>
     <string name="none" translatable="false" />
     <string name="challenge_your_math_skills">Challenge your math skills</string>
-    <string name="choose_game">Choose your desired mode</string>
+    <string name="choose_game">Choose your desired  game</string>
 
     <string name="loading_screen_timer" translatable="false">%1$d</string>
     <string name="online_math_game">Online Math Game</string>
@@ -16,14 +16,13 @@
     <string name="play">Play</string>
     <string name="click_to_resend_otp">Click to resend OTP</string>
     <string name="back">Back</string>
-    <string name="app_idea">Yearly students project\nLecturer Mr. Eran Katsav\nIn Partnership with Gool.co.il\nHolon institute of technology</string>
+    <string name="app_idea">Final project B.Sc. Computer Science\nLecturer Mr. Eran Katsav\nIn partnership with Gool.co.il\nHolon Institute of Technology</string>
     <string name="creators"><![CDATA[Almog Cohen & Gal Reshef S]]></string>
     <string name="verify_otp">Verify OTP</string>
     <string name="full_name">Full name</string>
     <string name="register">Register</string>
     <string name="finish">Finish</string>
     <string name="create_room">Create Room</string>
-    <string name="about" translatable="false">About</string>
     <string name="high_scores">Scores</string>
     <string name="main">Main</string>
     <string name="profile">Profile</string>
@@ -31,8 +30,8 @@
     <string name="last_survivor">Last survivor</string>
     <string name="logout">Logout</string>
     <string name="request_new_otp">Request new OTP</string>
-    <string name="in_space">"in "</string>
-    <string name="seconds">" seconds."</string>
+    <string name="in">in</string>
+    <string name="seconds">seconds</string>
     <string name="or">or</string>
     <string name="sign_in">Sign In</string>
     <string name="otp">OTP</string>
@@ -40,11 +39,11 @@
     <string name="resend_code">New OTP</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="players_count">"Players: "</string>
+    <string name="players_count">Players:</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="possible_players">/4 Possible players</string>
-    <string name="string">string</string>
+    <string name="string" translatable="false">string</string>
     <string name="user_name">user name</string>
     <string name="score_200">score 200</string>
     <string name="operators_selected">Operators:</string>
@@ -52,16 +51,16 @@
     <string name="no_open_rooms_create_a_room">No open rooms\nCreate a room</string>
     <string name="time_is">Time is :</string>
     <string name="correct_q">Correct Q:</string>
-    <string name="no_more_life_score_is">"No more life.\nYour score is: "</string>
-    <string name="congrats_new_high_score">"Congratulations, Your got a new High score.\nYour score is: "</string>
-    <string name="questions_correct">" questions"</string>
-    <string name="you_have_answered">"\nYou answered correctly "</string>
+    <string name="no_more_life_score_is">No more life.\nYour score is:</string>
+    <string name="congrats_new_high_score">Congratulations! You got a new\nHigh score\nYour new score is:</string>
+    <string name="questions_correct">questions</string>
+    <string name="you_have_answered">"You answered correctly "</string>
     <string name="select_operators">Select Operators</string>
     <string name="you_choose_we_ask">You choose, we ask</string>
-    <string name="has_answered">"has answered "</string>
-    <string name="_50_50">50/50</string>
-    <string name="game_over_score_is">\"Game is over. Score is: \"</string>
-    <string name="time_left_milli">Time left :</string>
+    <string name="has_answered">answered</string>
+    <string name="_50_50" translatable="false">50/50</string>
+    <string name="game_over_score_is">Game is over. Score is:</string>
+    <string name="time_left_milli">Time left:</string>
     <string name="journey_record">Journey Record</string>
     <string name="never_played_journey">Never played Journey</string>
     <string name="last_survivor_record">Last Survivor Record</string>
@@ -72,7 +71,7 @@
     <string name="game_room_unlocked">GameRoom is unlocked</string>
     <string name="choose_figure">Choose Figures</string>
     <string name="room_name_before">""</string>
-    <string name="room_name_after">" room"</string>
+    <string name="room_name_after">room</string>
     <string name="exit_game">Exit Game</string>
     <string name="are_you_sure_you_want_exit_the_game">Are you sure you want exit the game?</string>
     <string name="stay">Stay</string>
@@ -84,10 +83,13 @@
     <string name="please_choose_another_room">Please choose another room</string>
     <string name="select_a_character">Select a character</string>
     <string name="game_over">Game Over</string>
-    <string name="space_turn">" turn"</string>
+    <string name="player_turn_after">turn</string>
     <string name="questions_from_firebase_saved">Questions from Firebase saved</string>
     <string name="forced_firebase_update">Forced Firebase update</string>
     <string name="email_not_valid">Email not valid</string>
     <string name="min_pass_length">Password must contain min 6 characters</string>
+    <string name="welcome">Welcome</string>
+    <string name="player_turn_before">""</string>
+    <string name="about">About</string>
 
 </resources>

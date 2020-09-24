@@ -1,7 +1,10 @@
 # MathKef 
+<p align="center">
 <img src="https://github.com/galsreshef/MathKef/blob/master/app/src/main/res/drawable-mdpi/mathkef_logo.png?raw=true">
+<br>
 Final bachelor's degree Project in collaboration with Gool.co.il Website.
 Android multiplayer application implementing Google's Firebase Authentication service and Database capabilities.
+</p>
 
 ### Features
 - Multiplayer game.
@@ -15,10 +18,13 @@ Android multiplayer application implementing Google's Firebase Authentication se
 - Download [APK](https://github.com/galsreshef/MathKef/raw/master/app/release/MathKef_1.1.apk) and Install MathKef directly on your Android device.
 
 # App Screens
-<img src="https://github.com/galsreshef/MathKef/blob/master/Images/splash.png?raw=true">    </img>
-<img src="https://github.com/galsreshef/MathKef/blob/master/Images/login.png?raw=true">    </img>
-<img src="https://github.com/galsreshef/MathKef/blob/master/Images/home.png?raw=true">    </img>
-<img src="https://github.com/galsreshef/MathKef/blob/master/Images/room.png?raw=true">    </img>
+<p align="center">
+   <a><img src="https://github.com/galsreshef/MathKef/blob/master/Images/splash.png?raw=true" height="350" ></a>&nbsp; 
+   <a><img src="https://github.com/galsreshef/MathKef/blob/master/Images/login.png?raw=true" height="350"></a>&nbsp;
+   <a><img src="https://github.com/galsreshef/MathKef/blob/master/Images/home.png?raw=true" height="350"></a>&nbsp;
+  
+<img src="https://github.com/galsreshef/MathKef/blob/master/Images/room.png?raw=true" height="350">
+</p>
 
 ## Gameplay
 <img src="https://github.com/galsreshef/MathKef/blob/master/Images/game%20play.gif?raw=true">

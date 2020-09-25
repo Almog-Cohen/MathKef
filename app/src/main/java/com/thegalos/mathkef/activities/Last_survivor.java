@@ -281,7 +281,7 @@ public class Last_survivor extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String str = playersNamesList.get(playersNumTurnQueue.peek()) + "\n" + getString(R.string.has_answered) + " " + dataSnapshot.getValue(String.class);
+                    String str = dataSnapshot.child("Player").child("playerName").getValue(String.class)/*playersNamesList.get(playersNumTurnQueue.peek())*/ + "\n" + getString(R.string.has_answered) + " " + dataSnapshot.child("Answer").getValue(String.class);
                     tvAnswered.setText(str);
                     tvAnswered.setVisibility(View.VISIBLE);
                     tvAnswered.startAnimation(shakeAnim);
@@ -739,7 +739,8 @@ public class Last_survivor extends AppCompatActivity {
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("No");
                 }
-                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").setValue(btnOne.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Answer").setValue(btnOne.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Player").setValue(playersTurnQueue.peek());
             }
         });
 
@@ -753,7 +754,9 @@ public class Last_survivor extends AppCompatActivity {
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("No");
                 }
-                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").setValue(btnTwo.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Answer").setValue(btnTwo.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Player").setValue(playersTurnQueue.peek());
+
             }
         });
 
@@ -767,7 +770,9 @@ public class Last_survivor extends AppCompatActivity {
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("No");
                 }
-                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").setValue(btnThree.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Answer").setValue(btnThree.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Player").setValue(playersTurnQueue.peek());
+
             }
         });
 
@@ -780,7 +785,9 @@ public class Last_survivor extends AppCompatActivity {
                 } else {
                     FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Click_Answer").setValue("No");
                 }
-                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").setValue(btnFour.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Answer").setValue(btnFour.getText().toString());
+                FirebaseDatabase.getInstance().getReference().child("Rooms").child(gameType).child(roomName).child("Selected").child("Player").setValue(playersTurnQueue.peek());
+
             }
         });
 

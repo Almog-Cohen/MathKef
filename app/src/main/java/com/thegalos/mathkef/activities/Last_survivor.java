@@ -281,7 +281,7 @@ public class Last_survivor extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    String str = dataSnapshot.child("Player").child("playerName").getValue(String.class)/*playersNamesList.get(playersNumTurnQueue.peek())*/ + "\n" + getString(R.string.has_answered) + " " + dataSnapshot.child("Answer").getValue(String.class);
+                    String str = dataSnapshot.child("Player").child("playerName").getValue(String.class) + "\n" + getString(R.string.has_answered) + " " + dataSnapshot.child("Answer").getValue(String.class);
                     tvAnswered.setText(str);
                     tvAnswered.setVisibility(View.VISIBLE);
                     tvAnswered.startAnimation(shakeAnim);
